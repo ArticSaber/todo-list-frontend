@@ -1,7 +1,10 @@
+import Dashboard from "./components/dashboard/dashboard";
 function App() {
   return (
-    <div>App</div>
-  )
+    <div className="flex flex-row">
+      <Dashboard />
+    </div>
+  );
 }
 
-export default App
+export default App;
