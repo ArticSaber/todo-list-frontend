@@ -4,6 +4,7 @@ import { AiFillDelete } from "react-icons/ai";
 import { TbEdit } from "react-icons/tb";
 import { GrStatusGood } from "react-icons/gr";
 import { GrStatusUnknown } from "react-icons/gr";
+import { BASE_URL } from "../../../config";
 
 import "./dashboard.css";
 const Dashboard = () => {
@@ -17,7 +18,7 @@ const Dashboard = () => {
   }, []);
   const addTodoList = () => {
     if (button === "Add" && text !== "") {
-      fetch(`http://localhost:3500/api/v1/`, {
+      fetch(BASE_URL, {
         method: `POST`,
         crossDomain: true,
         headers: {
@@ -37,7 +38,7 @@ const Dashboard = () => {
     }
     if (button === "Update" && text !== "") {
       const id = listId;
-      fetch(`http://localhost:3500/api/v1/${id}`, {
+      fetch(BASE_URL + id, {
         method: `PATCH`,
         crossDomain: true,
         headers: {
@@ -62,7 +63,7 @@ const Dashboard = () => {
   };
 
   const getAllTask = (setTaskList) => {
-    axios.get(`http://localhost:3500/api/v1/`).then(({ data }) => {
+    axios.get(BASE_URL).then(({ data }) => {
       setTaskList(data);
     });
   };
@@ -75,7 +76,7 @@ const Dashboard = () => {
   }
 
   function deleteAList(id) {
-    fetch(`http://localhost:3500/api/v1/${id}`, {
+    fetch(BASE_URL + id, {
       method: `DELETE`,
       crossDomain: true,
       headers: {
