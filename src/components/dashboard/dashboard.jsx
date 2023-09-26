@@ -37,7 +37,6 @@ const Dashboard = () => {
     }
     if (button === "Update" && text !== "") {
       const id = listId;
-      console.log(taskStatus);
       fetch(`http://localhost:3500/api/v1/${id}`, {
         method: `PATCH`,
         crossDomain: true,
@@ -64,9 +63,7 @@ const Dashboard = () => {
 
   const getAllTask = (setTaskList) => {
     axios.get(`http://localhost:3500/api/v1/`).then(({ data }) => {
-      console.log(data);
       setTaskList(data);
-      console.log(data);
     });
   };
 
