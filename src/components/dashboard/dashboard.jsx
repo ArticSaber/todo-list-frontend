@@ -5,7 +5,7 @@ import { TbEdit } from "react-icons/tb";
 import { GrStatusGood } from "react-icons/gr";
 import { GrStatusUnknown } from "react-icons/gr";
 
-import "./Dashboard.css";
+import "./dashboard.css";
 const Dashboard = () => {
   const [text, setText] = useState("");
   const [taskList, setTaskList] = useState([]);
@@ -67,7 +67,6 @@ const Dashboard = () => {
     });
   };
 
-
   function updateTodo(id, text) {
     setListId(id);
     setButton("Update");
@@ -108,7 +107,7 @@ const Dashboard = () => {
     <div className="container">
       <div className="container-box">
         <div className="header">
-          <textarea                    // Used Best Practice
+          <textarea // Used Best Practice
             onClick={handleKeyPress}
             className="input"
             placeholder="Add task.."
